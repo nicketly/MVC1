@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form action="/home/calc" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        Операнд 1: <input name="num1"/>
+        Операнд 2: <input name="num2"/>
+        <select name="operationType">
+            <option value="1">Сложение</option>
+            <option value="2">Вычитание</option>
+            <option value="3">Произведение</option>
+            <option value="4">Деление</option>
+        </select>
+        <button>Рассчитать</button>
+    </form>
+</div>
