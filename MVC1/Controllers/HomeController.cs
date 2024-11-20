@@ -18,17 +18,18 @@ namespace MVC1.Controllers
             return View();
         }
 
-        public IActionResult Calc(int num1, int num2, int operationType)
+        public IActionResult Calc(double H0, double T_m, double T_g, double w_g, double C_g, double G_m, double C_m, double alpha_V, double D)
         {
-            var result = operationType switch
-            {
-                1 => num1 + num2,
-                2 => num1 - num2,
-                3 => num1 * num2,
-                4 => num1 / num2,
-            };
+            //var result = operationType switch
+            //{
+            //    1 => num1 + num2,
+            //    2 => num1 - num2,
+            //    3 => num1 * num2,
+            //    4 => num1 / num2,
+            //};
 
-            ViewData["result"] = result;
+            //ViewData["result"] = result;
+
             return View();
         }
 

@@ -1,9 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Исходные данные";
 }
+
+<h1> @ViewData["Title"] </h1>
+<p>Введите данные для расчета</p>
 
 <div class="text-left">
     <form action="/home/calc" method="post">
+        @* 
         <div class="mb-3">
             <label for="num1" class="form-label">Операнд 1</label>
             <input type="text" name="num1" class="form-control" id="num1">
@@ -23,6 +27,63 @@
         </div>
         
         
+        <button class="btn btn-primary">Рассчитать</button> *@
+
+        <div class="mb-3">
+            <label for="num1" class="form-label">
+                Высота слоя, H<sub>0</sub> (м)
+            </label>
+            <input type="text" name="num1" class="form-control" id="num1">
+        </div>
+        <div class="mb-3">
+            <label for="num2" class="form-label">
+                Начальная температура материала, T<sub>м</sub> (°C)
+            </label>
+            <input type="text" name="num2" class="form-control" id="num2">
+        </div>
+        <div class="mb-3">
+            <label for="num1" class="form-label">
+                Начальная температура газа, T<sub>г</sub> (°C)
+            </label>
+            <input type="text" name="num1" class="form-control" id="num1">
+        </div>
+        <div class="mb-3">
+            <label for="num2" class="form-label">
+                Скорость газа, w<sub>г</sub> (м/с)
+             </label>
+            <input type="text" name="num2" class="form-control" id="num2">
+        </div>
+        <div class="mb-3">
+            <label for="num1" class="form-label">
+                Средняя теплоемкость газа, C<sub>г</sub> (кДж/(м<sup>3</sup>·К))
+            </label>
+            <input type="text" name="num1" class="form-control" id="num1">
+        </div>
+        <div class="mb-3">
+            <label for="num2" class="form-label">
+                Расход материала, G<sub>м</sub> (кг/с)
+            </label>
+            <input type="text" name="num2" class="form-control" id="num2">
+        </div>
+        <div class="mb-3">
+            <label for="num1" class="form-label">
+                Теплоемкость материала, C<sub>м</sub> (кДж/(кг·К))
+            </label>
+            <input type="text" name="num1" class="form-control" id="num1">
+        </div>
+        <div class="mb-3">
+            <label for="num2" class="form-label">
+                Объемный коэффициент теплоотдачи, α<sub>V</sub> (Вт/(м<sup>3</sup>·К))
+            </label>
+            <input type="text" name="num2" class="form-control" id="num2">
+        </div>
+        <div class="mb-3">
+            <label for="num1" class="form-label">
+                Диаметр аппарата, D (м)
+            </label>
+            <input type="text" name="num1" class="form-control" id="num1">
+        </div>
+
         <button class="btn btn-primary">Рассчитать</button>
     </form>
 </div>
