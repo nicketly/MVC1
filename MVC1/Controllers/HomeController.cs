@@ -18,7 +18,7 @@ namespace MVC1.Controllers
             return View();
         }
 
-        public IActionResult Calc(double H0, double T_m, double T_g, double w_g, double C_g, double G_m, double C_m, double alpha_V, double D)
+        public IActionResult Calc(HeatCalculationModel model)
         {
             //var result = operationType switch
             //{
@@ -30,7 +30,15 @@ namespace MVC1.Controllers
 
             //ViewData["result"] = result;
 
-            return View();
+            if (ModelState.IsValid)
+            {
+                // ????????? ?????? ? ???????? ?????????? ? ?????????????
+                var results = model.CalculateTable();
+                ViewBag.Results = results;
+                return View(model);
+            }
+
+            return View(model);
         }
 
         public IActionResult Privacy()
