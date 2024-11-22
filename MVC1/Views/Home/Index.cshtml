@@ -5,6 +5,10 @@
 <h1> @ViewData["Title"] </h1>
 <p>Введите данные для расчета</p>
 
+<div class="alert alert-info" role="alert">
+    Значения в виде десятичной дроби вводите с разделителем запятая ","
+</div>
+
 <div class="text-left">
     <form action="/home/calc" method="post">
         @* 
@@ -30,58 +34,64 @@
         <button class="btn btn-primary">Рассчитать</button> *@
 
         <div class="mb-3">
-            <label for="num1" class="form-label">
+            <label for="H0" class="form-label">
                 Высота слоя, H<sub>0</sub> (м)
             </label>
-            <input type="text" name="num1" class="form-control" id="num1">
+            <input type="text" name="H0" class="form-control" id="H0">
         </div>
         <div class="mb-3">
-            <label for="num2" class="form-label">
+            <label for="DeltaH0" class="form-label">
+                Шаг высоты слоя, ΔH<sub>0</sub> (м)
+            </label>
+            <input type="text" name="DeltaH0" class="form-control" id="DeltaH0">
+        </div>
+        <div class="mb-3">
+            <label for="Tm" class="form-label">
                 Начальная температура материала, T<sub>м</sub> (°C)
             </label>
-            <input type="text" name="num2" class="form-control" id="num2">
+            <input type="text" name="Tm" class="form-control" id="Tm">
         </div>
         <div class="mb-3">
-            <label for="num1" class="form-label">
+            <label for="Tg" class="form-label">
                 Начальная температура газа, T<sub>г</sub> (°C)
             </label>
-            <input type="text" name="num1" class="form-control" id="num1">
+            <input type="text" name="Tg" class="form-control" id="Tg">
         </div>
         <div class="mb-3">
-            <label for="num2" class="form-label">
+            <label for="Wg" class="form-label">
                 Скорость газа, w<sub>г</sub> (м/с)
              </label>
-            <input type="text" name="num2" class="form-control" id="num2">
+            <input type="text" name="Wg" class="form-control" id="Wg">
         </div>
         <div class="mb-3">
-            <label for="num1" class="form-label">
+            <label for="Cg" class="form-label">
                 Средняя теплоемкость газа, C<sub>г</sub> (кДж/(м<sup>3</sup>·К))
             </label>
-            <input type="text" name="num1" class="form-control" id="num1">
+            <input type="text" name="Cg" class="form-control" id="Cg">
         </div>
         <div class="mb-3">
-            <label for="num2" class="form-label">
+            <label for="Gm" class="form-label">
                 Расход материала, G<sub>м</sub> (кг/с)
             </label>
-            <input type="text" name="num2" class="form-control" id="num2">
+            <input type="text" name="Gm" class="form-control" id="Gm">
         </div>
         <div class="mb-3">
-            <label for="num1" class="form-label">
+            <label for="Cm" class="form-label">
                 Теплоемкость материала, C<sub>м</sub> (кДж/(кг·К))
             </label>
-            <input type="text" name="num1" class="form-control" id="num1">
+            <input type="text" name="Cm" class="form-control" id="Cm">
         </div>
         <div class="mb-3">
-            <label for="num2" class="form-label">
+            <label for="AlphaV" class="form-label">
                 Объемный коэффициент теплоотдачи, α<sub>V</sub> (Вт/(м<sup>3</sup>·К))
             </label>
-            <input type="text" name="num2" class="form-control" id="num2">
+            <input type="text" name="AlphaV" class="form-control" id="AlphaV">
         </div>
         <div class="mb-3">
-            <label for="num1" class="form-label">
+            <label for="D" class="form-label">
                 Диаметр аппарата, D (м)
             </label>
-            <input type="text" name="num1" class="form-control" id="num1">
+            <input type="text" name="D" class="form-control" id="D">
         </div>
 
         <button class="btn btn-primary">Рассчитать</button>

@@ -25,7 +25,7 @@ namespace MVC1.Models
 
             for (double y = 0; y <= H0; y += DeltaH0)
             {
-                double Y = (AlphaV * y) / (Wg * Cg);
+                double Y = (AlphaV * y) / (Wg * Cg * 1000);
                 double upsilon = (1 - Math.Exp((M - 1) * Y / M)) / (1 - M * Math.Exp((M - 1) * Y0 / M));
                 double theta = (1 - M * Math.Exp((M - 1) * Y / M)) / (1 - M * Math.Exp((M - 1) * Y0 / M));
                 int t = (int)Math.Round(Tm + (Tg - Tm) * upsilon);

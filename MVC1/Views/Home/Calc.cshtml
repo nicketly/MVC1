@@ -1,9 +1,58 @@
-﻿@{
+﻿@model MVC1.Models.HeatCalculationModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    Результат расчета: @ViewData["result"]
+<h1>Результат расчета</h1>
+
+<div class="text-center" method="post" style="margin-top: 20px">
     <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>y, м</th>
+                <th>Температура материала, °C</th>
+                <th>Температура газа, °C</th>
+                <th>Разность температур, °C</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in ViewBag.Results)
+            {
+                <tr>
+                    <td>@row._y</td>
+                    <td>@row.TemperatureMaterial</td>
+                    <td>@row.TemperatureGas</td>
+                    <td>@row.TemperatureDifference</td>
+                </tr>
+            }
+        </tbody>
     </table>
+</div>
+
+<h3>Графики</h3>
+
+<!-- Контейнер для данных -->
+<div id="chartData"
+     data-y="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ChartDataY))"
+     data-temperature-material="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ChartDataTemperatureMaterial))"
+     data-temperature-gas="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ChartDataTemperatureGas))"
+     data-temperature-difference="@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.ChartDataTemperatureDifference))">
+</div>
+
+<!-- График температуры материала и газа -->
+<div>
+    <canvas id="temperatureChart" width="600" height="400"></canvas>
+</div>
+
+<!-- График разности температур -->
+<div>
+    <canvas id="differenceChart" width="600" height="400"></canvas>
+</div>
+
+<script src="/js/chart.js"></script>
+
+<h3>Скачать отчет</h3>
+<div>
+    <a asp-action="ExportToExcel" class="btn btn-success">Скачать Excel (.xlsx)</a>
 </div>
